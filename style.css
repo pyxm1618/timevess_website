@@ -1,0 +1,242 @@
+:root {
+    --bg-color: #F9F9F7;
+    --text-primary: #2C2C2C;
+    --text-secondary: #666666;
+    --accent-color: #8B4513; /* 类似 App 的褐色/木质色调 */
+    --font-family: 'Noto Serif SC', 'Songti SC', serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo .subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav a {
+    margin-left: 24px;
+    font-size: 15px;
+    color: var(--text-secondary);
+}
+
+nav .btn {
+    border: 1px solid var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+nav .btn:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 0;
+    min-height: 400px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    font-weight: 300;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.app-store-badge {
+    display: inline-block;
+    background-color: var(--text-primary);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.phone-mockup {
+    width: 260px;
+    height: 520px;
+    background: #fff;
+    border: 8px solid #ddd;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen-content {
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 80px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.feature-item h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.feature-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* Privacy Page */
+.privacy-page .container {
+    max-width: 720px;
+}
+
+.privacy-content {
+    padding: 40px 0;
+}
+
+.privacy-content h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.privacy-content h3 {
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.privacy-content ul {
+    padding-left: 20px;
+    color: var(--text-secondary);
+}
+
+.update-time {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 60px 0;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+footer a {
+    margin: 0 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 36px;
+    }
+    
+    .hero-image {
+        margin-top: 60px;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .feature-item h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    nav a {
+        margin: 0 12px;
+    }
+}
